@@ -38,9 +38,16 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .parallax-bg { background-attachment: fixed; }
+        
+        /* Animaciones de Scroll */
         @keyframes slide-in-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes slide-in-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes zoom-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        
+        /* Animación de Fade-in para el video */
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+        .video-fade-in { animation: fade-in 1.5s ease-in-out; }
+
         .animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .slide-in-up { animation: slide-in-up 1s forwards; }
         .slide-in-down { animation: slide-in-down 1s forwards; }
@@ -77,9 +84,10 @@
         <!-- Hero Section with Video -->
         <section class="relative h-[90vh] flex items-center justify-center text-white overflow-hidden">
             <!-- Video Background -->
-            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-                <!-- Reemplaza este SRC con la URL de tu propio video -->
-                <source src="https://cdn.coverr.co/videos/coverr-a-scientist-in-a-laboratory-4921/1080p.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0 video-fade-in">
+                <!-- Tu video desde el enlace de GitHub (versión "raw") -->
+                <source src="https://raw.githubusercontent.com/estebanampuero/patagonlab/main/Generated%20File%20August%2021%2C%202025%20-%201_11AM.mp4" type="video/mp4">
+                                
                 Tu navegador no soporta videos HTML5.
             </video>
             
@@ -95,8 +103,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- Beneficios Section -->
+        
         <section id="beneficios" class="py-24 bg-gray-50 relative">
             <div id="particles-js"></div>
             <div class="container mx-auto px-6 relative z-10">
@@ -124,7 +131,6 @@
             </div>
         </section>
 
-        <!-- Proceso Section -->
         <section id="proceso" class="py-24 bg-white">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-16 animate-on-scroll" data-animation="slide-in-up">
@@ -142,7 +148,6 @@
             </div>
         </section>
 
-        <!-- Misión Section -->
         <section id="mision" class="py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -156,7 +161,6 @@
             </div>
         </section>
 
-        <!-- Confianza Section -->
         <section id="confianza" class="py-24 bg-white overflow-x-hidden">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 animate-on-scroll" data-animation="slide-in-up">
@@ -165,7 +169,6 @@
                 </div>
             </div>
 
-            <!-- Franja de Logos Infinita -->
             <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] mb-20">
                 <ul class="flex items-center justify-center md:justify-start [&_li]:mx-10 [&_img]:max-w-none animate-infinite-scroll">
                     <li><img src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-400.svg" alt="Transistor" class="h-10"/></li>
@@ -184,17 +187,13 @@
             </div>
 
             <div class="container mx-auto px-6">
-                <!-- Contenedor del Carrusel de Testimonios -->
                 <div id="testimonial-container" class="max-w-4xl mx-auto relative min-h-[22rem]">
-                    <!-- Testimonio 1 -->
                     <div class="testimonial-item absolute w-full transition-opacity duration-1500 ease-in-out opacity-0">
                         <div class="bg-gray-50 p-10 md:p-12 rounded-2xl shadow-lg relative"><i data-lucide="quote" class="absolute top-6 left-8 h-12 w-12 text-brand-blue-200 opacity-80"></i><blockquote class="text-center"><p class="text-xl md:text-2xl text-gray-700 italic leading-relaxed">"La rapidez y precisión de Patagon Lab ha sido fundamental para nuestro programa de salud. Sus informes nos permiten tomar decisiones informadas que protegen nuestra inversión."</p></blockquote><footer class="mt-6 text-center"><p class="mt-4 text-lg font-bold text-brand-blue-900">- Gerente de Producción</p><p class="text-gray-500">Importante Empresa Salmonera</p></footer></div>
                     </div>
-                    <!-- Testimonio 2 -->
                     <div class="testimonial-item absolute w-full transition-opacity duration-1500 ease-in-out opacity-0">
                         <div class="bg-gray-50 p-10 md:p-12 rounded-2xl shadow-lg relative"><i data-lucide="quote" class="absolute top-6 left-8 h-12 w-12 text-brand-blue-200 opacity-80"></i><blockquote class="text-center"><p class="text-xl md:text-2xl text-gray-700 italic leading-relaxed">"El soporte técnico y la especialización del equipo son invaluables. Entienden nuestros desafíos y siempre están dispuestos a colaborar en la interpretación de resultados."</p></blockquote><footer class="mt-6 text-center"><p class="mt-4 text-lg font-bold text-brand-blue-900">- Jefa de Salud y Bienestar</p><p class="text-gray-500">Productora Acuícola Líder</p></footer></div>
                     </div>
-                    <!-- Testimonio 3 -->
                     <div class="testimonial-item absolute w-full transition-opacity duration-1500 ease-in-out opacity-0">
                         <div class="bg-gray-50 p-10 md:p-12 rounded-2xl shadow-lg relative"><i data-lucide="quote" class="absolute top-6 left-8 h-12 w-12 text-brand-blue-200 opacity-80"></i><blockquote class="text-center"><p class="text-xl md:text-2xl text-gray-700 italic leading-relaxed">"Implementar los análisis de Patagon Lab nos dio una ventaja competitiva. La detección temprana ha mejorado significativamente nuestras tasas de supervivencia."</p></blockquote><footer class="mt-6 text-center"><p class="mt-4 text-lg font-bold text-brand-blue-900">- Gerente General</p><p class="text-gray-500">Innovadora Startup de Acuicultura</p></footer></div>
                     </div>
@@ -202,7 +201,6 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section id="contacto" class="relative overflow-hidden">
              <div id="cta-parallax-bg" class="absolute top-0 left-0 w-full h-full bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(7, 25, 59, 0.95), rgba(13, 44, 96, 0.9)), url('https://images.unsplash.com/photo-1576798484259-83a3f07a7a0b?q=80&w=1974&auto=format&fit=crop');"></div>
             <div class="container mx-auto px-6 py-24 text-center text-white relative z-10">
@@ -215,7 +213,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-brand-blue-900 text-white">
         <div class="container mx-auto px-6 py-16">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -249,7 +246,6 @@
         lucide.createIcons();
         document.getElementById('mobile-menu-button').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
         
-        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -260,7 +256,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
         
-        // Parallax Effect for CTA only
         window.addEventListener('scroll', function() {
             const scrollPos = window.pageYOffset;
             const ctaBg = document.getElementById('cta-parallax-bg');
@@ -270,7 +265,6 @@
             }
         });
 
-        // Testimonial Carousel
         const testimonials = document.querySelectorAll('.testimonial-item');
         let currentTestimonialIndex = 0;
         function showNextTestimonial() {
@@ -283,10 +277,9 @@
         if (testimonials.length > 0) {
             testimonials[0].classList.remove('opacity-0');
             testimonials[0].classList.add('opacity-100');
-            setInterval(showNextTestimonial, 5000); // Change testimonial every 5 seconds
+            setInterval(showNextTestimonial, 5000);
         }
 
-        // tsParticles - Biotech Animation
         tsParticles.load("particles-js", {
             background: { color: { value: 'transparent' } }, fpsLimit: 60,
             interactivity: { events: { onHover: { enable: true, mode: "grab" }, resize: true }, modes: { grab: { distance: 140, line_linked: { opacity: 1 } } } },

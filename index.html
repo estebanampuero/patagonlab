@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patagon Lab - Liderando el análisis genético en acuicultura</title>
+    
+    <!-- TailwindCSS via CDN with custom configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': { '900': '#07193b', '800': '#0d2c60', '200': '#cde5ff' },
+                        'brand-green': { '500': '#00c9a7', '600': '#00a98f' },
+                    },
+                    borderRadius: { '2xl': '1rem' },
+                    transitionDuration: { '1500': '1500ms' },
+                    animation: { 'infinite-scroll': 'infinite-scroll 30s linear infinite' },
+                    keyframes: {
+                        'infinite-scroll': { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-100%)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .parallax-bg { background-attachment: fixed; }
+        @keyframes slide-in-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slide-in-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes zoom-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        .animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .slide-in-up { animation: slide-in-up 1s forwards; }
+        .slide-in-down { animation: slide-in-down 1s forwards; }
+        .zoom-in { animation: zoom-in 0.8s forwards; }
+        #particles-js { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200/80">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <svg class="h-8 w-8 text-brand-blue-900" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
+                <span class="text-2xl font-bold text-brand-blue-900">Patagon Lab</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#beneficios" class="text-gray-600 hover:text-brand-blue-800">Beneficios</a>
+                <a href="#proceso" class="text-gray-600 hover:text-brand-blue-800">Proceso</a>
+                <a href="#mision" class="text-gray-600 hover:text-brand-blue-800">Misión</a>
+                <a href="#confianza" class="text-gray-600 hover:text-brand-blue-800">Confianza</a>
+            </nav>
+            <a href="#contacto" class="hidden md:inline-block bg-brand-blue-800 text-white font-medium py-2 px-6 rounded-lg hover:bg-brand-blue-900 transition-all hover:scale-105 transform">Solicitar Análisis</a>
+            <button class="md:hidden" id="mobile-menu-button"><i data-lucide="menu" class="h-6 w-6"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#beneficios" class="block py-2">Beneficios</a> <a href="#proceso" class="block py-2">Proceso</a>
+             <a href="#mision" class="block py-2">Misión</a> <a href="#confianza" class="block py-2">Confianza</a>
+             <a href="#contacto" class="mt-4 block bg-brand-blue-800 text-white text-center py-2 rounded-lg">Solicitar Análisis</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Video -->
+        <section class="relative h-[90vh] flex items-center justify-center text-white overflow-hidden">
+            <!-- Video Background -->
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <!-- Reemplaza este SRC con la URL de tu propio video -->
+                <source src="https://cdn.coverr.co/videos/coverr-a-scientist-in-a-laboratory-4921/1080p.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            
+            <!-- Dark Overlay -->
+            <div class="absolute top-0 left-0 w-full h-full bg-brand-blue-900/70 z-10"></div>
+
+            <div class="container mx-auto px-6 text-center z-20 relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-on-scroll" data-animation="slide-in-down">Liderando el análisis genético y de sangre en acuicultura</h1>
+                <p class="text-lg md:text-xl text-brand-blue-200 max-w-3xl mx-auto mb-8 animate-on-scroll" data-animation="slide-in-up">Precisión, rapidez y confianza para la toma de decisiones críticas en su producción. Impulsamos la salud y la eficiencia con tecnología de vanguardia.</p>
+                <div class="flex justify-center gap-4 flex-wrap animate-on-scroll" data-animation="zoom-in">
+                    <a href="#contacto" class="bg-brand-green-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-brand-green-600 transition-all transform hover:scale-105 shadow-lg">Solicitar Análisis</a>
+                    <a href="#proceso" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold py-3 px-8 rounded-lg hover:bg-white/20 transition-all transform hover:scale-105">Conocer más</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios Section -->
+        <section id="beneficios" class="py-24 bg-gray-50 relative">
+            <div id="particles-js"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                 <div class="text-center mb-16 animate-on-scroll" data-animation="slide-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue-900">Análisis que marcan la diferencia</h2>
+                    <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">Optimizamos su producción con datos precisos y accionables para una toma de decisiones informada.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 animate-on-scroll" data-animation="slide-in-up">
+                        <div class="flex items-center justify-center h-16 w-16 bg-brand-blue-200 text-brand-blue-800 rounded-full mx-auto mb-6"><i data-lucide="zap" class="h-8 w-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue-900">Resultados rápidos y confiables</h3>
+                        <p class="text-gray-600">Obtenga diagnósticos en tiempo récord para actuar de forma proactiva y minimizar riesgos.</p>
+                    </div>
+                    <div class="text-center p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 animate-on-scroll" data-animation="slide-in-up" style="animation-delay: 0.2s;">
+                        <div class="flex items-center justify-center h-16 w-16 bg-brand-blue-200 text-brand-blue-800 rounded-full mx-auto mb-6"><i data-lucide="dna" class="h-8 w-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue-900">Tecnología de vanguardia</h3>
+                        <p class="text-gray-600">Utilizamos secuenciación (NGS) y qPCR para la máxima precisión en detección de patógenos.</p>
+                    </div>
+                    <div class="text-center p-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 animate-on-scroll" data-animation="slide-in-up" style="animation-delay: 0.4s;">
+                        <div class="flex items-center justify-center h-16 w-16 bg-brand-blue-200 text-brand-blue-800 rounded-full mx-auto mb-6"><i data-lucide="shield-check" class="h-8 w-8"></i></div>
+                        <h3 class="text-xl font-bold mb-2 text-brand-blue-900">Soporte especializado</h3>
+                        <p class="text-gray-600">Nuestro equipo de científicos entiende los desafíos de la industria y entrega soporte post-análisis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso Section -->
+        <section id="proceso" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16 animate-on-scroll" data-animation="slide-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue-900">Nuestro Proceso Simplificado</h2>
+                    <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">De la muestra al informe en tres pasos claros y eficientes.</p>
+                </div>
+                <div class="relative">
+                    <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-brand-blue-200"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center relative">
+                        <div class="flex flex-col items-center animate-on-scroll" data-animation="zoom-in"><div class="relative z-10 flex items-center justify-center h-24 w-24 bg-white border-4 border-brand-blue-800 text-brand-blue-800 rounded-full mb-6 text-4xl font-black">1</div><h3 class="text-xl font-bold mb-2 text-brand-blue-900">Toma de Muestras</h3><p class="text-gray-600">Coordine la recolección y envío seguro con nuestros kits especializados y logística optimizada.</p></div>
+                        <div class="flex flex-col items-center animate-on-scroll" data-animation="zoom-in" style="animation-delay: 0.2s;"><div class="relative z-10 flex items-center justify-center h-24 w-24 bg-white border-4 border-brand-blue-800 text-brand-blue-800 rounded-full mb-6 text-4xl font-black">2</div><h3 class="text-xl font-bold mb-2 text-brand-blue-900">Análisis Avanzado</h3><p class="text-gray-600">Procesamos las muestras con equipos automatizados y protocolos rigurosos para garantizar la integridad de los datos.</p></div>
+                        <div class="flex flex-col items-center animate-on-scroll" data-animation="zoom-in" style="animation-delay: 0.4s;"><div class="relative z-10 flex items-center justify-center h-24 w-24 bg-white border-4 border-brand-blue-800 text-brand-blue-800 rounded-full mb-6 text-4xl font-black">3</div><h3 class="text-xl font-bold mb-2 text-brand-blue-900">Resultados Confiables</h3><p class="text-gray-600">Acceda a informes detallados y fáciles de interpretar a través de nuestro portal seguro en línea.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Misión Section -->
+        <section id="mision" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-on-scroll" data-animation="slide-in-up"><img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=1974&auto=format&fit=crop" alt="Fundador de Patagon Lab" class="rounded-2xl shadow-xl w-full h-auto object-cover"></div>
+                    <div class="animate-on-scroll" data-animation="slide-in-up" style="animation-delay: 0.2s;">
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-blue-900 mb-4">Nuestra Misión</h2>
+                        <blockquote class="text-xl text-gray-700 italic border-l-4 border-brand-green-500 pl-6 my-6">"Nacimos de la necesidad de aplicar la ciencia más avanzada para resolver problemas reales en la acuicultura. Nuestra misión es ser el socio estratégico que convierte datos genéticos complejos en decisiones claras y rentables para nuestros clientes."</blockquote>
+                        <p class="mt-6 font-bold text-brand-blue-900">Dr. Alejandro Fuentes</p><p class="text-gray-500">Fundador y Director Científico</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confianza Section -->
+        <section id="confianza" class="py-24 bg-white overflow-x-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 animate-on-scroll" data-animation="slide-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-blue-900">La confianza de líderes en la industria</h2>
+                    <p class="text-lg text-gray-600 mt-3">Colaboramos con empresas que buscan la excelencia en acuicultura.</p>
+                </div>
+            </div>
+
+            <!-- Franja de Logos Infinita -->
+            <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] mb-20">
+                <ul class="flex items-center justify-center md:justify-start [&_li]:mx-10 [&_img]:max-w-none animate-infinite-scroll">
+                    <li><img src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-400.svg" alt="Transistor" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-400.svg" alt="Reform" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-400.svg" alt="Tuple" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-400.svg" alt="SavvyCal" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-400.svg" alt="Statamic" class="h-10"/></li>
+                </ul>
+                <ul class="flex items-center justify-center md:justify-start [&_li]:mx-10 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+                    <li><img src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-400.svg" alt="Transistor" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-400.svg" alt="Reform" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-400.svg" alt="Tuple" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-400.svg" alt="SavvyCal" class="h-10"/></li>
+                    <li><img src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-400.svg" alt="Statamic" class="h-10"/></li>
+                </ul>
+            </div>
+
+            <div class="container mx-auto px-6">
+                <!-- Contenedor del Carrusel de Testimonios -->
+                <div id="testimonial-container" class="max-w-4xl mx-auto relative min-h-[22rem]">
+                    <!-- Testimonio 1 -->
+                    <div class="testimonial-item absolute w-full transition-opacity duration-1500 ease-in-out opacity-0">
+                        <div class="bg-gray-50 p-10 md:p-12 rounded-2xl shadow-lg relative"><i data-lucide="quote" class="absolute top-6 left-8 h-12 w-12 text-brand-blue-200 opacity-80"></i><blockquote class="text-center"><p class="text-xl md:text-2xl text-gray-700 italic leading-relaxed">"La rapidez y precisión de Patagon Lab ha sido fundamental para nuestro programa de salud. Sus informes nos permiten tomar decisiones informadas que protegen nuestra inversión."</p></blockquote><footer class="mt-6 text-center"><p class="mt-4 text-lg font-bold text-brand-blue-900">- Gerente de Producción</p><p class="text-gray-500">Importante Empresa Salmonera</p></footer></div>
+                    </div>
+                    <!-- Testimonio 2 -->
+                    <div class="testimonial-item absolute w-full transition-opacity duration-1500 ease-in-out opacity-0">
+                        <div class="bg-gray-50 p-10 md:p-12 rounded-2xl shadow-lg relative"><i data-lucide="quote" class="absolute top-6 left-8 h-12 w-12 text-brand-blue-200 opacity-80"></i><blockquote class="text-center"><p class="text-xl md:text-2xl text-gray-700 italic leading-relaxed">"El soporte técnico y la especialización del equipo son invaluables. Entienden nuestros desafíos y siempre están dispuestos a colaborar en la interpretación de resultados."</p></blockquote><footer class="mt-6 text-center"><p class="mt-4 text-lg font-bold text-brand-blue-900">- Jefa de Salud y Bienestar</p><p class="text-gray-500">Productora Acuícola Líder</p></footer></div>
+                    </div>
+                    <!-- Testimonio 3 -->
+                    <div class="testimonial-item absolute w-full transition-opacity duration-1500 ease-in-out opacity-0">
+                        <div class="bg-gray-50 p-10 md:p-12 rounded-2xl shadow-lg relative"><i data-lucide="quote" class="absolute top-6 left-8 h-12 w-12 text-brand-blue-200 opacity-80"></i><blockquote class="text-center"><p class="text-xl md:text-2xl text-gray-700 italic leading-relaxed">"Implementar los análisis de Patagon Lab nos dio una ventaja competitiva. La detección temprana ha mejorado significativamente nuestras tasas de supervivencia."</p></blockquote><footer class="mt-6 text-center"><p class="mt-4 text-lg font-bold text-brand-blue-900">- Gerente General</p><p class="text-gray-500">Innovadora Startup de Acuicultura</p></footer></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contacto" class="relative overflow-hidden">
+             <div id="cta-parallax-bg" class="absolute top-0 left-0 w-full h-full bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(7, 25, 59, 0.95), rgba(13, 44, 96, 0.9)), url('https://images.unsplash.com/photo-1576798484259-83a3f07a7a0b?q=80&w=1974&auto=format&fit=crop');"></div>
+            <div class="container mx-auto px-6 py-24 text-center text-white relative z-10">
+                <div class="animate-on-scroll" data-animation="slide-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Potencie su producción con datos precisos</h2>
+                    <p class="text-lg md:text-xl text-brand-blue-200 max-w-2xl mx-auto mb-8">Hable con uno de nuestros especialistas para diseñar un plan de análisis a la medida de sus necesidades.</p>
+                    <a href="#" class="bg-brand-green-500 text-white font-bold py-4 px-10 rounded-lg hover:bg-brand-green-600 transition-all transform hover:scale-105 shadow-lg text-lg inline-block">Contáctanos hoy</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue-900 text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div class="md:col-span-2"><h3 class="text-2xl font-bold mb-4">Patagon Lab®</h3><p class="text-gray-400 max-w-sm">Innovación en análisis genéticos para una acuicultura sostenible y productiva.</p></div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-200 tracking-wider uppercase text-sm">Navegación</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#beneficios" class="text-gray-400 hover:text-white">Beneficios</a></li>
+                        <li><a href="#proceso" class="text-gray-400 hover:text-white">Proceso</a></li>
+                        <li><a href="#mision" class="text-gray-400 hover:text-white">Misión</a></li>
+                        <li><a href="#confianza" class="text-gray-400 hover:text-white">Confianza</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-gray-200 tracking-wider uppercase text-sm">Contacto</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i data-lucide="map-pin" class="h-5 w-5 mr-3 mt-1 text-gray-500"></i><span class="text-gray-400">Puerto Montt, Chile</span></li>
+                        <li class="flex items-start"><i data-lucide="mail" class="h-5 w-5 mr-3 mt-1 text-gray-500"></i><span class="text-gray-400">contacto@patagonlab.cl</span></li>
+                        <li class="flex items-start"><i data-lucide="phone" class="h-5 w-5 mr-3 mt-1 text-gray-500"></i><span class="text-gray-400">+56 9 1234 5678</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm">
+                <p class="text-gray-500">&copy; 2025 Patagon Lab. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 sm:mt-0"><a href="#" class="text-gray-500 hover:text-white"><i data-lucide="linkedin" class="h-5 w-5"></i></a><a href="#" class="text-gray-500 hover:text-white"><i data-lucide="twitter" class="h-5 w-5"></i></a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobile-menu-button').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(entry.target.getAttribute('data-animation'));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => { observer.observe(el); });
+        
+        // Parallax Effect for CTA only
+        window.addEventListener('scroll', function() {
+            const scrollPos = window.pageYOffset;
+            const ctaBg = document.getElementById('cta-parallax-bg');
+            if (ctaBg) {
+                const ctaOffsetTop = document.getElementById('contacto').offsetTop;
+                ctaBg.style.transform = `translateY(${(scrollPos - ctaOffsetTop) * 0.2}px)`;
+            }
+        });
+
+        // Testimonial Carousel
+        const testimonials = document.querySelectorAll('.testimonial-item');
+        let currentTestimonialIndex = 0;
+        function showNextTestimonial() {
+            testimonials[currentTestimonialIndex].classList.remove('opacity-100');
+            testimonials[currentTestimonialIndex].classList.add('opacity-0');
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+            testimonials[currentTestimonialIndex].classList.remove('opacity-0');
+            testimonials[currentTestimonialIndex].classList.add('opacity-100');
+        }
+        if (testimonials.length > 0) {
+            testimonials[0].classList.remove('opacity-0');
+            testimonials[0].classList.add('opacity-100');
+            setInterval(showNextTestimonial, 5000); // Change testimonial every 5 seconds
+        }
+
+        // tsParticles - Biotech Animation
+        tsParticles.load("particles-js", {
+            background: { color: { value: 'transparent' } }, fpsLimit: 60,
+            interactivity: { events: { onHover: { enable: true, mode: "grab" }, resize: true }, modes: { grab: { distance: 140, line_linked: { opacity: 1 } } } },
+            particles: {
+                color: { value: "#0d2c60" }, links: { color: "#0d2c60", distance: 150, enable: true, opacity: 0.3, width: 1 },
+                collisions: { enable: true }, move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 1, straight: false },
+                number: { density: { enable: true, area: 800 }, value: 60 }, opacity: { value: 0.3 }, shape: { type: "circle" }, size: { value: { min: 1, max: 5 } },
+            }, detectRetina: true,
+        });
+    </script>
+</body>
+</html>
